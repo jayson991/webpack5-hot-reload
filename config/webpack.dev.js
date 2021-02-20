@@ -8,8 +8,8 @@ module.exports = {
   target: 'web',
   entry: {
     app: [
-      '@babel/runtime/regenerator',
-      'webpack-hot-middleware/client?reload=true',
+      'webpack-dev-server/client?http://localhost:8080',
+      'webpack/hot/dev-server',
       path.resolve(__dirname, '../src/index.js')
     ]
   },
@@ -40,7 +40,7 @@ module.exports = {
     rules: [
       {
         test: /\.html$/,
-        use: ['html-loader']
+        use: ['raw-loader']
       },
       {
         test: /\.js$/,
